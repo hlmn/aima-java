@@ -74,10 +74,7 @@ public class EightPuzzleApp extends SimpleAgentApp {
 				new GreedyBestFirstSearch(new GraphSearch(), new ManhattanHeuristicFunction()));
 		addSearchAlgorithm("AStar Search (MisplacedTileHeursitic)",
 				new AStarSearch(new GraphSearch(), new MisplacedTilleHeuristicFunction()));
-		addSearchAlgorithm("AStar Search (ManhattanHeursitic)",
-				new AStarSearch(new GraphSearch(), new ManhattanHeuristicFunction()));
-		addSearchAlgorithm("Simulated Annealing Search",
-				new SimulatedAnnealingSearch(new ManhattanHeuristicFunction()));
+
 	}
 
 	/** Returns an <code>EightPuzzleView</code> instance. */
