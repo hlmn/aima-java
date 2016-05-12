@@ -57,10 +57,7 @@ public class EightPuzzleApp extends SimpleAgentApp {
 	protected static List<Search> SEARCH_ALGOS = new ArrayList<Search>();
 
 	/** Adds a new item to the list of supported search algorithms. */
-	public static void addSearchAlgorithm(String name, Search algo) {
-		SEARCH_NAMES.add(name);
-		SEARCH_ALGOS.add(algo);
-	}
+
 
 	static {
 		addSearchAlgorithm("Breadth First Search (Graph Search)", new BreadthFirstSearch(new GraphSearch()));
@@ -74,7 +71,10 @@ public class EightPuzzleApp extends SimpleAgentApp {
 				new GreedyBestFirstSearch(new GraphSearch(), new ManhattanHeuristicFunction()));
 		addSearchAlgorithm("AStar Search (MisplacedTileHeursitic)",
 				new AStarSearch(new GraphSearch(), new MisplacedTilleHeuristicFunction()));
-
+		addSearchAlgorithm("AStar Search (ManhattanHeursitic)",
+				new AStarSearch(new GraphSearch(), new ManhattanHeuristicFunction()));
+		addSearchAlgorithm("Simulated Annealing Search",
+				new SimulatedAnnealingSearch(new ManhattanHeuristicFunction()));
 	}
 
 	/** Returns an <code>EightPuzzleView</code> instance. */
